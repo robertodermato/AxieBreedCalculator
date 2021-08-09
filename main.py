@@ -9,11 +9,11 @@ def breed_calculator():
     # You should use the lowest value found in the Marketplace
     selling_value = 800
 
-    # value of 1 AXS in USD
-    AXS = 43.6
+    # price of 1 AXS in USD
+    AXS_price = 43.6
 
-    # value of 1 SLP in USD
-    SLP = 0.18
+    # price of 1 SLP in USD
+    SLP_price = 0.18
 
     # quantity of AXS used in one breeding
     AXS_per_breed = 4
@@ -29,11 +29,14 @@ def breed_calculator():
     SLP_used = [0, 300, 600, 900, 1500, 2400, 3900, 6300]
 
     for breed in range (1,8):
-        profit = breed * selling_value - (SLP_used[breed] * SLP + breed*(AXS_per_breed * AXS))
+        total_selling_value = breed * selling_value
+        total_cost = SLP_used[breed] * SLP_price + breed * (AXS_per_breed * AXS_price)
+        profit =  total_selling_value - total_cost
         ending_credit = "profit"
         if profit < 0:
             ending_credit = "loss"
         print("When you breed these axies", breed, "times, you will have a", ending_credit, "of", profit, "USD")
+        # print("Because you will sell them by", total_selling_value, "USD", "and have a cost of", total_cost, "for breeding them." )
 
 
 

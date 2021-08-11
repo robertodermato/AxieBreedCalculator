@@ -2,21 +2,21 @@ def breed_calculator():
     print("Welcome do ProBreederBR Breed Calculator")
     print("This calculator was based on WhoopDeeDoo's Breeding calculator.")
     print("https://www.desmos.com/calculator/hqzmebd2nj")
-    print("https: // www.youtube.com / whoopdeedoo56")
+    print("https://www.youtube.com / whoopdeedoo56")
     print("@Whoopdeedoo12")
 
     # expected value of selling of the bred axie (in USD)
     # You should use the lowest value found in the Marketplace
-    selling_value = 1000
+    selling_value = 500
 
     # price of 1 AXS in USD
-    AXS_price = 43.6
+    AXS_price = 40.86
 
     # price of 1 SLP in USD
-    SLP_price = 0.18
+    SLP_price = 0.2139
 
     # quantity of AXS used in one breeding
-    AXS_per_breed = 4
+    AXS_per_breed = 2
 
     # quantity of SLP used per breed count per couple
     # SLP_one_breed = 300
@@ -35,8 +35,9 @@ def breed_calculator():
         ending_credit = "profit"
         if profit < 0:
             ending_credit = "loss"
-        print("When you breed these axies", breed, "times, you will have a", ending_credit, "of", profit, "USD")
+        print("\nWhen you breed these axies", breed, "times, you will have a", ending_credit, "of", profit, "USD")
         print("Because you will sell them by", total_selling_value, "USD", "and have a cost of", total_cost, "for breeding them." )
+        print("To avoid losses you should sell each child for at least", total_cost/breed, "USD")
 
 
 
